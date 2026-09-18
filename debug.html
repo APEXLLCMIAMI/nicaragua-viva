@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Error Check</title>
+</head>
+<body>
+<div id="output"></div>
+<script>
+window.onerror = function(message, source, lineno, colno, error) {
+  document.getElementById('output').innerHTML += 
+    '<p style="color:red;font-family:monospace">ERROR: ' + message + '<br>Line: ' + lineno + ':' + colno + '</p>';
+  return true;
+};
+</script>
+<script src="data/nicaragua-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  if (typeof NICARAGUA_DATA !== 'undefined') {
+    document.getElementById('output').innerHTML += '<p style="color:green">✅ NICARAGUA_DATA loaded OK: ' + NICARAGUA_DATA.departments.length + ' departments</p>';
+  } else {
+    document.getElementById('output').innerHTML += '<p style="color:red">❌ NICARAGUA_DATA NOT loaded</p>';
+  }
+</script>
+</body>
+</html>

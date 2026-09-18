@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    window.onerror = function(message, source, lineno, colno, error) {
+      document.body.innerHTML += 'Error: ' + message + ' at ' + source + ':' + lineno + ':' + colno + '<br>';
+    };
+  </script>
+  <script src="data/nicaragua-data.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+  <script>
+    const fs = new ActiveXObject("Scripting.FileSystemObject");
+    const file = fs.CreateTextFile("error_log.txt", true);
+    file.WriteLine(document.body.innerText);
+    file.Close();
+    window.close();
+  </script>
+</body>
+</html>

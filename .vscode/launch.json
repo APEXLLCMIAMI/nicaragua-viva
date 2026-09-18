@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Lanzar Nicaragua Viva en Chrome (Archivo Local)",
+            "type": "chrome",
+            "request": "launch",
+            "file": "${workspaceFolder}/index.html"
+        },
+        {
+            "name": "Lanzar Nicaragua Viva con Live Server",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://127.0.0.1:5500/index.html",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
